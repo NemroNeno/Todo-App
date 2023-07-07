@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>To Do list App</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="box" id="heading">
+         <h1> <%= dat%></h1>
+    </div>
+
+    <div class="box">
+
+      <ol>
+       <% for(let i=0;i<page_item.length;i++){ %>
+         <div class="item">
+           <input type="checkbox">
+           <p><%=page_item[i]%></p>
+         </div>
+
+
+
+       <%  }%>
+
+      </ol>
+
+      <form class="item" action="/add" method="post">
+
+        <input type="text" name="adder" placeholder="New task" autocomplete="off" >
+        <button type="submit" name="button">+</button>
+
+      </form>
+
+
+    </div>
+
+
+
+
+
+
+  </body>
+</html>
