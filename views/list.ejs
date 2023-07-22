@@ -14,10 +14,15 @@
 
       <ol>
        <% for(let i=0;i<page_item.length;i++){ %>
-         <div class="item">
-           <input type="checkbox">
-           <p><%=page_item[i]%></p>
-         </div>
+
+         <form  action="/delete" method="post">
+           <div class="item">
+             <input type="checkbox" name="checkbox" value=<%=page_item[i]._id%> onChange="this.form.submit()">
+             <p><%=page_item[i].name%></p>
+           </div>
+           <input type="hidden" name="list_name" value="<%= dat%>"></input>
+         </form>
+
 
 
 
@@ -28,7 +33,7 @@
       <form class="item" action="/add" method="post">
 
         <input type="text" name="adder" placeholder="New task" autocomplete="off" >
-        <button type="submit" name="button">+</button>
+        <button type="submit" name="list" value="<%=dat%>">+</button>
 
       </form>
 
